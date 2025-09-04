@@ -1,3 +1,5 @@
+#Erros
+
 class No:
     def __init__(self, valor, proximo):
         self.info = valor
@@ -11,8 +13,74 @@ class Ldse:
     def inserir_inicio(self,valor):
         if self.quant == 0:
             self.prim = self.ult = No(valor,None)
-        
         else:
             self.prim = No(valor, self.prim)
-
         self.quant += 1
+
+    def remover_inicio(self):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            self.prim = self.prim.prox
+        self.quant -= 1
+
+    def show(self):
+        aux = self.prim
+        for i in range(self.quant):
+            print(aux.info)
+            aux = aux.prox
+
+    def inserir_fim(self,valor):
+        if self.quant == 0:
+            self.prim = self.ult = No(valor,None)
+        else:
+            self.ult.prox = self.ult = No(valor,None)
+        self.quant += 1
+
+    def ver_primeiro(self):
+        return self.prim.info
+
+    def ver_ultimo(self):
+        return self.ult.info
+
+    def ver_quantidade(self):
+        return self.quant
+
+    def esta_vazia(self):
+        return self.quant == 0
+
+    def remover_fim1(self):
+        if self.quant== 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            for i in range(self.quant-2):
+                aux = aux.prox
+            self.ult = aux
+            self.ult.prox = None
+        self.quant -=1
+
+    def remover_fim2(self):
+        if self.quant== 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            while aux.prox != self.ult:
+                aux = aux.prox
+            self.ult = aux
+            self.ult.prox = None
+        self.quant -= 1
+    
+    def remover_fim3(self):
+        if self.quant== 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            ant = None
+            
+            while aux != self.ult:
+                ant = aux
+                aux = aux.prox
+            self.ult = ant
+            self.ult.prox = None
+        self. quant -= 1
