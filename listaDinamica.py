@@ -44,6 +44,15 @@ l.remover_fim3()
 l.show()
 print('Esperado B A')
 
-l.remover_fim2()
+l.remover('A')
 l.show()
 print('Esperado B')
+
+l.inserir_inicio('X')
+l.show()
+print('Esperado X B')
+
+l.remover('B')
+l.show()
+print('Esperado X')
+

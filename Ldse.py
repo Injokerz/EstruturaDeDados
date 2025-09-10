@@ -84,3 +84,22 @@ class Ldse:
             self.ult = ant
             self.ult.prox = None
         self. quant -= 1
+
+    def remover(self,valor):
+        aux = self.prim
+        ant = None
+        while aux != None and aux.info != valor:
+            ant = aux
+            aux = aux.prox
+
+            if aux != None:
+                if aux == self.prim:
+                    self.prim = self.prim.prox
+
+                else:      
+                    ant.prox = aux.prox
+
+                if aux == self.ult:
+                    self.ult = ant
+
+            self.quant -= 1
