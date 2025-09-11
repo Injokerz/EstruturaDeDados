@@ -100,7 +100,7 @@ class Ldse:
                 else:      
                     ant.prox = aux.prox
 
-                if aux == self.ult:
-                    self.ult = ant
+                    if aux == self.ult:
+                        self.ult = ant
 
             self.quant -= 1

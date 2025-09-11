@@ -54,4 +54,21 @@ class Ldde:
         for i in range(self.quant):
             print(aux.info)
             aux = aux.ant
-        print('funciono')
+
+    def remover(self,valor):
+        if self.quant == 1:
+            self.prim = self.ult = None
+        else:
+            aux = self.prim
+            while aux != None and aux.info != valor:
+                ant = aux
+                aux = aux.prox
+
+                if aux != None:
+                    if aux == self.prim:
+                        self.prim = self.prim.prox
+                    else:
+                        ant.prox = aux.prox
+                        if aux == self.ult:
+                            self.ult = ant
+                self.quant -= 1
