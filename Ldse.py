@@ -1,4 +1,5 @@
 #Erros
+#erro de nonetype normalmente esta relacionado ao quant
 
 class No:
     def __init__(self, valor, proximo):
